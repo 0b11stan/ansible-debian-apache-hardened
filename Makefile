@@ -1,8 +1,10 @@
-CMD=ansible-playbook -i inventory.ini -k site.yml
+CMD=ansible-playbook -i inventory.ini -k 
 
 check: inventory.ini
-	$(CMD) --check --diff
+	$(CMD) site.yml --check --diff
 
 apply: inventory.ini
-	$(CMD)
+	$(CMD) site.yml
 
+upgrade: inventory.ini
+	$(CMD) upgrade.yml

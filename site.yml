@@ -2,4 +2,20 @@
 - hosts: all
   roles:
     - apache
+  tasks:
+    - name: enable self upgrades
+      become: true
+      cron:
+        name: upgrade system
+        minute: "0"
+        hour: "3"
+        job: "apt update && apt upgrade -y"
+      when: self_upgrade|bool
+
+    - name: disable self upgrades
+      become: true
+      cron:
+        name: upgrade system
+        state: absent
+      when: not self_upgrade|bool
 ...
