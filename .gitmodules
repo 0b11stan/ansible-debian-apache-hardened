@@ -1,3 +1,6 @@
 [submodule "roles/apache"]
 	path = roles/apache
 	url = git@github.com:0b11stan/ansible-role-centos-apache.git
+[submodule "roles/certbot"]
+	path = roles/certbot
+	url = git@github.com:0b11stan/ansible-role-certbot.git
