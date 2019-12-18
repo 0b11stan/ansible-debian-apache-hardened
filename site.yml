@@ -1,7 +1,6 @@
 ---
 - hosts: all
   roles:
-    - certbot
     - apache
   tasks:
     - name: enable self upgrades
